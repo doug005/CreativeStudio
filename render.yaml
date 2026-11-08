@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: creatorspace-api
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm run start -w server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+      - key: SEED_CREATOR_EMAIL
+        sync: false
+      - key: SEED_CREATOR_PASSWORD
+        sync: false
