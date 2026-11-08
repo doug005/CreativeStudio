@@ -2,6 +2,7 @@ services:
   - type: web
     name: creatorspace-api
     runtime: node
+    plan: free
     buildCommand: npm install
     startCommand: npm run start -w server
     healthCheckPath: /api/health
